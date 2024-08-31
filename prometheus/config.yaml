@@ -25,7 +25,13 @@ ports:
 ports_description:
   9090/tcp: Not required for Ingress
 options:
-  alertManagerTargets: []
+  alerting:
+    alertmanagers:
+      - static_configs:
+          - targets:
 schema: 
-  alertManagerTargets: 
-    - str?
+  alerting:
+    alertmanagers:
+      - static_configs:
+          - targets:
+            - str?
