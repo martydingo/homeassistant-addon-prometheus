@@ -23,6 +23,25 @@ The open platform for beautiful analytics and monitoring.
 
 ## About
 
+*Update 2024-08-31*
+
+This addon has been forked, and now updates prometheus to 2.54.1, as well hassio-addons/base being updated to 16.2.1. This addon now merges a yaml file named `prometheus.yaml` located in `/share/prometheus` with the configuration located within the container. This allows for (but not just) the targeting of a remote alert manager instance.
+
+For example, the contents of `/share/prometheus/prometheus.yaml` could contain:
+
+```
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - 1.3.3.7:9093
+```
+
+Which would then send alerts to an alert manager instance located at `http://1.3.3.7:9093`
+
+---
+
 ....
 
 [:books: Read the full add-on documentation][docs]
