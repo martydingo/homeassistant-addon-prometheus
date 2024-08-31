@@ -17,7 +17,7 @@ RUN \
     ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     \
-    && apk --no-cache add jq \
+    && apk --no-cache add yq \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     && apk --no-cache add \
         curl \
