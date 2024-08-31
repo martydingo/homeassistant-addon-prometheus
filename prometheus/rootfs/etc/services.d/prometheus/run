@@ -41,6 +41,6 @@ if ! bashio::fs.directory_exists /share/prometheus/targets; then
   chown -R prometheus:prometheus /share/prometheus/targets
 fi
 
-yq eval-all '. as $item ireduce ({}; . * $item)' /etc/prometheus/prometheus.yml /share/prometheus/prometheus.yaml > /etc/prometheus/prometheus.yml
+yq -i eval-all '. as $item ireduce ({}; . * $item)' /etc/prometheus/prometheus.yml /share/prometheus/prometheus.yaml
 # Run Prometheus
 exec s6-setuidgid prometheus /usr/local/bin/prometheus "${options[@]}"
