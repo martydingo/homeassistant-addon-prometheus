@@ -25,8 +25,13 @@ ports:
 ports_description:
   9090/tcp: Not required for Ingress
 options:
-  extraConfig: 
-  - ""
+  alerting:
+    alertmanagers:
+      - static_configs:
+          - targets:
+          #  - alertmanager:9093
 schema:
-  extraConfig:
-  - "match(^.*$)?"
+  alerting:
+    alertmanagers:
+      - static_configs:
+          - targets: list(str)?
