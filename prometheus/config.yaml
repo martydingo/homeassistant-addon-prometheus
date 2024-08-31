@@ -33,5 +33,4 @@ schema:
   alerting:
     alertmanagers:
       - static_configs:
-          - targets:
-            - str?
+          - targets: "list()?"
