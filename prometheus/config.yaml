@@ -28,7 +28,7 @@ options:
   alerting:
     alertmanagers:
       - static_configs:
-          - targets:
+          - targets: []
 schema: 
   alerting:
     alertmanagers:
