@@ -6,11 +6,11 @@ import os
 import tempfile
 import requests
 
-from yamlinclude import YamlIncludeConstructor
+from yaml_include import Constructor
 
 
 def generateConfig():
-    YamlIncludeConstructor.add_to_loader_class(
+    Constructor.add_to_loader_class(
         loader_class=yaml.FullLoader, base_dir="/share/prometheus/"
     )
 
