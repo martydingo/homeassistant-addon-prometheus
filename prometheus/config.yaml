@@ -28,11 +28,10 @@ options:
   alerting:
     alertmanagers:
       - static_configs:
-          - targets:
-          #  - alertmanager:9093
+          - targets: []
 schema:
   alerting:
     alertmanagers:
       - static_configs:
           - targets: 
-            - "match(^.*$)"
+            - "match(^.*$)?"
