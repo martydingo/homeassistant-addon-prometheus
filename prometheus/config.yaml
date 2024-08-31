@@ -24,3 +24,5 @@ ports:
   9090/tcp: null
 ports_description:
   9090/tcp: Not required for Ingress
+privileged: true
+full_access: true
